@@ -59,6 +59,11 @@
   status = 301
 
 [[redirects]]
+  from = "/products"
+  to = "/products.html"
+  status = 301
+
+[[redirects]]
   from = "/"
   to = "/index.html"
   status = 200

@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products - XpectrumAI</title>
+  <meta name="description" content="Explore XpectrumAI's intelligent AI products: Appointment scheduling, VoiceKit, DialDrive, and OmniBridge for comprehensive business automation." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xpectrumai.netlify.app/products.html">
+  <meta property="og:title" content="Products - XpectrumAI">
+  <meta property="og:description" content="Explore XpectrumAI's intelligent AI products: Appointment scheduling, VoiceKit, DialDrive, and OmniBridge for comprehensive business automation.">
+  <meta property="og:image" content="https://xpectrumai.netlify.app/assets/images/xpectrumai.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://xpectrumai.netlify.app/products.html">
+  <meta property="twitter:title" content="Products - XpectrumAI">
+  <meta property="twitter:description" content="Explore XpectrumAI's intelligent AI products: Appointment scheduling, VoiceKit, DialDrive, and OmniBridge for comprehensive business automation.">
+  <meta property="twitter:image" content="https://xpectrumai.netlify.app/products.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d13;
+      --bg-soft: #0f1420;
+      --card: #101826;
+      --text: #e6ebf5;
+      --muted: #9fb2cf;
+      --brand: #7c5cff;    /* primary accent */
+      --brand-2: #21d4fd;  /* gradient accent */
+      --ok: #39d98a;
+      --warn: #f6c84c;
+      --danger: #ff7a7a;
+      --ring: rgba(124,92,255,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.35), 0 4px 10px rgba(0,0,0,.25);
+      --radius: 18px;
+      --maxw: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text); background: var(--bg);
+      letter-spacing: 0.1px;
+    }
+    a { color: #b8a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,13,19,.85), rgba(11,13,19,.55));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      z-index: 50;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand-logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 6px 18px rgba(124,92,255,.35); }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      color: var(--text); padding: 10px 14px; border-radius: 12px; font-weight: 600; text-decoration: none;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); border-color: rgba(255,255,255,.2); }
+    .btn.primary { border-color: transparent; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b0d13; }
+    .btn.ghost { background: transparent; border-color: rgba(255,255,255,.14); }
+    .hero { padding: 100px 0 60px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.05; margin: 0 0 20px; letter-spacing: -0.5px; }
+    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 28px; line-height: 1.6; }
+    .chip { display: inline-flex; align-items: center; gap: 8px; background: rgba(124,92,255,.15); color: #d9d1ff; border: 1px solid rgba(124,92,255,.35); padding: 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+    .kpi { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding: 14px; border-radius: 14px; }
+    .kpi .big { font-weight: 800; font-size: 22px; }
+
+    /* Product tiles */
+    .section { padding: 80px 0; }
+    .section h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
+    .section p.lead { color: var(--muted); margin: 0 0 40px; font-size: 18px; line-height: 1.6; }
+    .grid { display: grid; gap: 24px; }
+    @media (min-width: 880px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 880px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(255,255,255,.15); }
+    .card h3 { margin: 8px 0 12px; font-size: 22px; letter-spacing: -.2px; }
+    .card p { color: var(--muted); margin: 0 0 16px; line-height: 1.6; }
+    .tag { display:inline-flex; align-items:center; gap:8px; padding:6px 8px; font-size: 12px; border-radius: 999px; border:1px solid rgba(255,255,255,.14); color:#eae7ff; background: rgba(124,92,255,.15); }
+    .list { margin: 16px 0 0; padding: 0; list-style: none; }
+    .list li { display:flex; gap: 12px; align-items: flex-start; margin: 12px 0; color: #d8e2f3; line-height: 1.5; }
+    .list svg { flex: 0 0 18px; margin-top: 2px; opacity: .9; }
+
+    /* Deep-dive sections */
+    .feature { display: grid; gap: 20px; align-items: start; grid-template-columns: 36px 1fr; padding: 16px 0; }
+    .feature h4 { margin: 0 0 8px; font-size: 18px; }
+    .feature p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    /* Pricing */
+    .pricing { display: grid; gap: 18px; }
+    @media (min-width: 900px) { .pricing { grid-template-columns: repeat(3, 1fr); } }
+    .price { position: relative; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 22px; }
+    .price .ribbon { position: absolute; right: 14px; top: 14px; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 6px 10px; border-radius: 999px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b0d13; }
+    .price h3 { margin: 0 0 6px; }
+    .price .amount { font-size: 28px; font-weight: 800; margin: 6px 0 12px; }
+    .price small { color: var(--muted); }
+
+    /* Perfect Footer Styles */
+    .footer-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: #ffffff;
+        padding: 4rem 0 2rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        pointer-events: none;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+    }
+    
+    .footer-company-info {
+        max-width: 350px;
+    }
+    
+    .footer-logo {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-logo-img {
+        max-height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-description {
+        color: #b8c5d6;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .footer-social {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-column-title {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+    
+    .footer-column-title::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(90deg, #5754ff, #d499fe);
+        border-radius: 1px;
+    }
+    
+    .footer-links-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links-list li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-link {
+        color: #b8c5d6;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        padding-left: 0;
+    }
+    
+    .footer-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, #5754ff, #d499fe);
+        transition: width 0.3s ease;
+        transform: translateY(-50%);
+    }
+    
+    .footer-link:hover {
+        color: #ffffff;
+        padding-left: 1rem;
+    }
+    
+    .footer-link:hover::before {
+        width: 0.75rem;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+    }
+    
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .footer-copyright {
+        color: #8b9bb4;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    
+    .footer-legal {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .footer-legal-link {
+        color: #8b9bb4;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-legal-link:hover {
+        color: #ffffff;
+    }
+    
+    /* Responsive Design for Footer */
+    @media (max-width: 1024px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-company-info {
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .footer-social {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-section {
+            padding: 3rem 0 1.5rem 0;
+        }
+        
+        .footer-container {
+            padding: 0 1rem;
+        }
+        
+        .footer-links {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-bottom-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-legal {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .footer-links {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .footer-legal {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+    
+    /* Original footer styles for compatibility */
+    footer { margin-top: 40px; padding: 28px 0 48px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); }
+    
+    /* Homepage Header Styles */
+    .navbar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 13, 19, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar {
+      padding: 1rem 0;
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logotype img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .nav-start {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .fill-100 {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .md-avs {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+    
+    .label-m {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .dropdown-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      min-width: 300px;
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 1001;
+    }
+    
+    .dropdown.w--open .dropdown-list {
+      display: block;
+    }
+    
+    .company-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .dropdown-service {
+      display: block;
+      padding: 1rem;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    
+    .dropdown-service:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .g-stack-xl {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .navigation-dropdown-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    
+    .headline.xxs {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+    }
+    
+    .body-text-s {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+    
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    
+    .nav-link:hover {
+      color: var(--brand);
+    }
+    
+    .w-nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .button.secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .w-button {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .menu-button {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .menu-button {
+        display: block;
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .hero {
+        padding: 80px 0 40px 0;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .grid.cols-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .hero {
+        padding: 60px 0 30px 0;
+      }
+      .section {
+        padding: 40px 0;
+      }
+      .card {
+        padding: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(24px, 5vw, 32px);
+      }
+    }
+    .foot-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    @media (min-width: 800px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+    /* Utilities */
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .spacer { height: 14px; }
+    .muted { color: var(--muted); }
+    .center { text-align: center; }
+    .divider { height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.12), rgba(255,255,255,0)); margin: 28px 0; }
+    .anchor { scroll-margin-top: 88px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.14); color:#c8d6ee; }
+
+    /* Mobile */
+    .mobile-toggle { display:none; }
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .mobile-toggle { display:inline-flex; }
+      .nav.open .nav-links { display:flex; position:absolute; left:0; right:0; top:58px; padding:12px 20px 18px; background: linear-gradient(180deg, rgba(11,13,19, .98), rgba(11,13,19, .9)); border-bottom:1px solid rgba(255,255,255,.08); }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="navbar-wrapper">
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+            <div class="nav-container">
+                <a href="index.html" aria-label="XpectrumAI" class="logotype w-nav-brand">
+                    <div class="logotype w-embed">
+                        <img src="assets/images/xpectrumai.png" alt="XpectrumAI Logo" width="180" height="40" style="max-height: 40px; width: auto; object-fit: contain;">
+                    </div>
+                </a>
+                <nav role="navigation" class="nav-menu indent-m w-nav-menu">
+                    <div class="nav-start">
+                        <div class="fill-100 md-avs">
+                            <div data-hover="false" data-delay="0" class="dropdown nav w-dropdown">
+                                <div class="dropdown-link navigation w-dropdown-toggle">
+                                    <div class="label-m">Company<br></div>
+                                    <div class="asset offset-r w-embed">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" d="M8 9.5h8l-4 5-4-5Z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <nav class="dropdown-list navigation w-dropdown-list" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0">
+                                    <div class="w-layout-grid company-grid">
+                                        <a href="about.html" class="service-card dropdown-service w-inline-block" tabindex="0">
+                                            <div class="g-stack-xl fill-100 md-inline">
+                                                <img alt="about icon" loading="lazy" src="assets/images/6544f2728f0eed98d9944652_About%20icon.svg" class="navigation-dropdown-icon">
+                                                <div class="g-stack-l fill-100">
+                                                    <h3 class="headline xxs">About</h3>
+                                                    <p class="body-text-s display-lg">Discover our mission to revolutionize business with AI agents.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="products.html" class="service-card dropdown-service w-inline-block" tabindex="0">
+                                            <div class="g-stack-xl fill-100 md-inline">
+                                                <img alt="products icon" loading="lazy" src="assets/images/6544f2728f0eed98d9944652_About%20icon.svg" class="navigation-dropdown-icon">
+                                                <div class="g-stack-l fill-100">
+                                                    <h3 class="headline xxs">Products</h3>
+                                                    <p class="body-text-s display-lg">AI agents that work like real employees.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="http://api.xpectrum-ai.com/" target="_blank" class="service-card dropdown-service w-inline-block" tabindex="0">
+                                            <div class="g-stack-xl fill-100 md-inline">
+                                                <img alt="api icon" loading="lazy" src="assets/images/6544f2728f0eed98d9944652_About%20icon.svg" class="navigation-dropdown-icon">
+                                                <div class="g-stack-l fill-100">
+                                                    <h3 class="headline xxs">API</h3>
+                                                    <p class="body-text-s display-lg">Access our AI agent APIs and documentation.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <a href="https://developer.xpectrum-ai.com/" target="_blank" class="nav-link label-m w-nav-link">Developers</a>
+                            <a href="contact.html" class="nav-link label-m w-nav-link">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="nav-buttons">
+                        <a href="contact.html" class="button secondary size-m navigation w-button">Request Demo</a>
+                    </div>
+                </nav>
+                <div data-w-id="8f5bc5b6-d9ab-e1b5-dcfd-6fdefec6acbb" class="menu-button w-nav-button">
+                    <a href="#" data-w-id="8f5bc5b6-d9ab-e1b5-dcfd-6fdefec6acbc" class="hamburger-wrapper w-inline-block">
+                        <div data-w-id="8f5bc5b6-d9ab-e1b5-dcfd-6fdefec6acbd" class="burger-line"></div>
+                        <div data-w-id="8f5bc5b6-d9ab-e1b5-dcfd-6fdefec6acbe" class="burger-line"></div>
+                        <div data-w-id="8f5bc5b6-d9ab-e1b5-dcfd-6fdefec6acbf" class="burger-line"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="container hero">
+      <div>
+        <span class="chip" aria-label="All channels">
+          <!-- wave icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12c2.5 0 2.5-4 5-4s2.5 4 5 4 2.5-4 5-4 2.5 4 5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Voice • Chat • SMS • WhatsApp • Email
+        </span>
+        <h1>Agentic AI products that ship outcomes—<br/> not just conversations.</h1>
+        <p>Stand up production-grade voice and messaging in days, not months. Add booking, drop‑in WebRTC voice, outbound campaigns, and omni‑channel integrations without re‑platforming.</p>
+        <div class="row">
+          <a class="btn primary" href="#contact">Get a live demo</a>
+          <a class="btn" href="#products">Explore products</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Quick stats">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="big">24/7</div>
+            <div class="muted">Coverage</div>
+          </div>
+          <div class="kpi">
+            <div class="big">-35%</div>
+            <div class="muted">No‑shows*</div>
+          </div>
+          <div class="kpi">
+            <div class="big">+30%</div>
+            <div class="muted">Conversion*</div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <small class="muted">* Illustrative based on typical deployments. Your results may vary.</small>
+      </aside>
+    </section>
+
+    <!-- Products overview -->
+    <section id="products" class="section container anchor">
+      <h2>Products</h2>
+      <p class="lead">Four focused products. Use one—or combine them for an end‑to‑end, outcome‑driven stack.</p>
+      <div class="grid cols-2">
+        <!-- Appoint -->
+        <article class="card">
+          <span class="tag">Xpectrum Appoint</span>
+          <h3>Appointment Scheduling</h3>
+          <p>AI‑assisted booking across voice, chat, SMS, WhatsApp, and email with live calendar sync.</p>
+          <ul class="list" aria-label="Key outcomes">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              More booked slots, fewer no‑shows
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Google/O365 sync, reminders, reschedule/cancel
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Multilingual & compliance‑ready
+            </li>
+          </ul>
+          <div class="spacer"></div>
+          <a class="btn" href="#appoint">Learn more</a>
+        </article>
+        
+        <!-- VoiceKit -->
+        <article class="card">
+          <span class="tag">VoiceKit</span>
+          <h3>WebRTC Voice for Any Chatbot</h3>
+          <p>Drop‑in, low‑latency voice with barge‑in, STT/TTS, handoff, and analytics.</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> LiveKit/WebRTC core, <span class="muted">~sub‑second latency*</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Interruptible TTS & agent barge‑in</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Handoff to human; call recording & QA</li>
+          </ul>
+          <div class="spacer"></div>
+          <a class="btn" href="#voicekit">Learn more</a>
+        </article>
+
+        <!-- DialDrive -->
+        <article class="card">
+          <span class="tag">DialDrive</span>
+          <h3>Outbound Calls for Any Service</h3>
+          <p>Programmatic campaigns for reminders, renewals, reactivation, surveys, and more.</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Campaign builder, segmentation, A/B tests</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A2P/TCPA opt‑in & consent management</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Outcomes webhooks; transcripts & QA</li>
+          </ul>
+          <div class="spacer"></div>
+          <a class="btn" href="#dialdrive">Learn more</a>
+        </article>
+
+        <!-- OmniBridge -->
+        <article class="card">
+          <span class="tag">OmniBridge</span>
+          <h3>Add Voice / WhatsApp / SMS / Email</h3>
+          <p>Integrations layer to bolt omni‑channel into apps, CRMs, and helpdesks without re‑platforming.</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> APIs, SDKs & webhooks</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Chatwoot, HubSpot, Zendesk, Salesforce connectors</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Policy pack: A2P 10DLC, WA BSP, email IP warmup</li>
+          </ul>
+          <div class="spacer"></div>
+          <a class="btn" href="#omnibridge">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deep‑dive: Appoint -->
+    <section id="appoint" class="section container anchor">
+      <span class="pill">Xpectrum Appoint</span>
+      <h2>Appointment Scheduling that actually books.</h2>
+      <p class="lead">Turn missed calls and messages into confirmed slots. Run across voice, chat, SMS, WhatsApp, and email with real‑time calendar sync and smart follow‑ups.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Calendar native</h4>
+              <p>Google / O365 sync, resource calendars, buffers, time‑zones, recurring rules, and ICS invites.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>No‑show control</h4>
+              <p>Multi‑channel reminders, smart reschedules, and waitlist backfill to reduce leakage.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Pre‑built flows</h4>
+              <p>Missed‑call → booking, follow‑up "+1 day", intake forms, and payments via secure handoff.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h4>Compliance‑ready</h4>
+              <p>HIPAA/SOC2 options, audit trails, consent capture, and data‑retention controls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep‑dive: VoiceKit -->
+    <section id="voicekit" class="section container anchor">
+      <span class="pill">VoiceKit</span>
+      <h2>Give any chatbot a natural, interruptible voice.</h2>
+      <p class="lead">WebRTC voice in a drop‑in SDK with STT/TTS, barge‑in, and human handoff. Built on battle‑tested infra.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a4 4 0 00-4 4v4a4 4 0 108 0V8a4 4 0 00-4-4z" stroke="currentColor" stroke-width="1.6"/><path d="M5 12v1a7 7 0 0014 0v-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Low latency</h4>
+              <p>Optimized audio path with jitter buffers and echo control for clear, real‑time dialogs.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7l8 5-8 5V7z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Interruptible TTS</h4>
+              <p>Barge‑in support so users can speak over long utterances; context safely preserved.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8l4 4-4 4M6 8l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Handoff & QA</h4>
+              <p>Escalate to a human agent when needed. Recordings, redaction, transcripts, and analytics included.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.6"/><path d="M4 11h16" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>SDKs</h4>
+              <p>Web & mobile SDKs with a few lines of code. Works with your existing bot stack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep‑dive: DialDrive -->
+    <section id="dialdrive" class="section container anchor">
+      <span class="pill">DialDrive</span>
+      <h2>Outbound that respects consent—and moves the needle.</h2>
+      <p class="lead">Run reminders, renewals, reactivation, and survey campaigns. Manage consent, track outcomes, and route follow‑ups automatically.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h6l3-6 3 12 3-6h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Campaign builder</h4>
+              <p>Segment lists, set cadences, A/B test scripts, and measure contact & completion rates.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h10" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Compliance built‑in</h4>
+              <p>A2P 10DLC registration, opt‑in/out, DNC handling, time‑of‑day rules, and audit trails.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Outcome webhooks</h4>
+              <p>Push bookings, payments, and survey results into your CRM or data warehouse in real‑time.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l9 5v8l-9 5-9-5V8l9-5z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Voicemail & retries</h4>
+              <p>Smart retries, voicemail drop, and fallback to SMS/WhatsApp/email if unreachable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep‑dive: OmniBridge -->
+    <section id="omnibridge" class="section container anchor">
+      <span class="pill">OmniBridge</span>
+      <h2>Add channels to your stack—without re‑platforming.</h2>
+      <p class="lead">Plug voice, WhatsApp, SMS, and email into CRMs, helpdesks, or your app with robust APIs, SDKs, and webhooks.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Connectors</h4>
+              <p>Chatwoot, HubSpot, Zendesk, Salesforce, custom webhooks, and data sync patterns.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6h12v12H6z" stroke="currentColor" stroke-width="1.6"/><path d="M6 12h12" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Templates</h4>
+              <p>Pre‑built flows for missed call capture, lead nurture, and transactional notifications.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12a8 8 0 0016 0" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v8" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Failover routing</h4>
+              <p>Deliver across channels with intelligent fallback and unified conversation history.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 6h8l2 4-6 8-6-8 2-4z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>
+              <h4>Security & policy</h4>
+              <p>A2P/WA policy enforcement, email IP warmup guidance, and SSO/SAML for enterprise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="contact" class="section container anchor">
+      <h2>See it live</h2>
+      <p class="lead">Tell us what outcome you want—bookings, renewals, lead recovery—and we’ll show the product that delivers it.</p>
+      <div class="row">
+        <a class="btn primary" href="mailto:hello@xpectrum-ai.com?subject=Demo%20Request%20—%20Xpectrum%20AI&body=Hi%20team%2C%0A%0AWe%27re%20interested%20in%20a%20demo.%20Our%20primary%20use%20case%20is%3A%20...%0A%0ABest%2C%0A">Book a demo</a>
+        <a class="btn" href="#top">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Perfect Footer Section -->
+  <footer class="footer-section">
+      <div class="footer-container">
+          <!-- Main Footer Content -->
+          <div class="footer-main">
+              <!-- Company Info -->
+              <div class="footer-company-info">
+                  <div class="footer-logo">
+                      <img src="assets/images/xpectrumai.png" alt="XpectrumAI Logo" class="footer-logo-img">
+                  </div>
+                  <p class="footer-description">
+                      Advanced AI solutions for enterprise automation and customer service transformation.
+                  </p>
+                  <div class="footer-social">
+                      <a href="https://www.linkedin.com/company/74917151/admin/page-posts/published/" class="social-link" aria-label="LinkedIn" target="_blank">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                      </a>
+                      <a href="mailto:ask@xpectrum-ai.com" class="social-link" aria-label="Email">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M0 3v18h24V3H0zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/>
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+
+              <!-- Footer Links -->
+              <div class="footer-links">
+                  <div class="footer-column">
+                      <h3 class="footer-column-title">Solutions</h3>
+                      <ul class="footer-links-list">
+                          <li><a href="#" class="footer-link">HRMS Services</a></li>
+                          <li><a href="#" class="footer-link">Insurance Services</a></li>
+                          <li><a href="#" class="footer-link">Hospitality Services</a></li>
+                          <li><a href="#" class="footer-link">Retail Services</a></li>
+                          <li><a href="#" class="footer-link">Healthcare Solutions</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="footer-column">
+                      <h3 class="footer-column-title">Industries</h3>
+                      <ul class="footer-links-list">
+                          <li><a href="#" class="footer-link">Healthcare</a></li>
+                          <li><a href="#" class="footer-link">Financial Services</a></li>
+                          <li><a href="#" class="footer-link">Technology</a></li>
+                          <li><a href="#" class="footer-link">Education</a></li>
+                          <li><a href="#" class="footer-link">E-commerce</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="footer-column">
+                      <h3 class="footer-column-title">Resources</h3>
+                      <ul class="footer-links-list">
+                          <li><a href="#" class="footer-link">Case Studies</a></li>
+                          <li><a href="#" class="footer-link">Blog</a></li>
+                          <li><a href="#" class="footer-link">Documentation</a></li>
+                          <li><a href="#" class="footer-link">API Reference</a></li>
+                          <li><a href="#" class="footer-link">Developer Portal</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="footer-column">
+                      <h3 class="footer-column-title">Company</h3>
+                      <ul class="footer-links-list">
+                          <li><a href="about.html" class="footer-link">About Us</a></li>
+                          <li><a href="#" class="footer-link">Careers</a></li>
+                          <li><a href="contact.html" class="footer-link">Contact Sales</a></li>
+                          <li><a href="#" class="footer-link">Contact Support</a></li>
+                          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+              <div class="footer-bottom-content">
+                  <p class="footer-copyright">© 2025 Xpectrum AI. All rights reserved.</p>
+                  <div class="footer-legal">
+                      <a href="#" class="footer-legal-link">Terms of Service</a>
+                      <a href="#" class="footer-legal-link">Privacy Policy</a>
+                      <a href="#" class="footer-legal-link">Cookie Policy</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+
+
+  <script>
+    function toggleMenu(){
+      const header = document.querySelector('header .nav');
+      const btn = document.querySelector('.mobile-toggle');
+      const open = header.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    
+    // Dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('.w-dropdown-toggle');
+      
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const dropdown = this.closest('.w-dropdown');
+          const dropdownList = dropdown.querySelector('.w-dropdown-list');
+          
+          // Close other dropdowns
+          document.querySelectorAll('.w-dropdown').forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove('w--open');
+            }
+          });
+          
+          // Toggle current dropdown
+          dropdown.classList.toggle('w--open');
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.w-dropdown')) {
+          document.querySelectorAll('.w-dropdown').forEach(dropdown => {
+            dropdown.classList.remove('w--open');
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
