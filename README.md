@@ -104,3 +104,4 @@ This template is for demonstration purposes. Please check the original license f
 
 For technical support or customization requests, please refer to the original template documentation or contact the development team.
 # Xpectrum-MainWebsite
+# xpectrum-ai
