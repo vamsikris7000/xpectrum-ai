@@ -151,9 +151,9 @@ When creating new pages, copy the entire script section from a working page (lik
 ## 📋 **Company Dropdown Structure**
 The Company dropdown should include these 4 options:
 
-1. **About** - "Discover our mission to revolutionize business with AI agents."
+1. **About** - "Discover our mission to revolutionize business with AI employees."
 2. **Developers** - "Meet the experts behind our AI innovation."
-3. **Products** - "AI agents that work like real employees."
+3. **Products** - "AI employees that work like real employees."
 4. **API** - "Access our AI agent APIs and documentation." (Links to https://testapi-liard.vercel.app/)
 
 ### **API Link Template:**
